@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<meta charset="utf-8"/>
+<head>
+<title>Marza</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='marza2.css') }}">
+
+</head>
+<body>
+
+
+ <table class="minimalistBlack" >
+  <thead> 
+   <tr>
+    <th>DZIAŁ</th>
+    <th>CAHT</th>
+    <th>Marge</th>
+    <th>Marge %</th>
+    <th>CAHT</th>
+    <th>Marge</th>
+    <th>Marge %</th>
+    <th>CAHT</th>
+    <th>Marge</th>
+    <th>Marge %</th>
+  </tr>
+ <thead>
+ <tbody>
+{% for x in lista %}
+  <tr>
+     <td> {{x[1]}} </td>
+     <td> {{x[2]}} </td>
+     <td> {{x[3]}} </td>
+     <td> {{x[4]}} </td>
+     <td> {{x[5]}} </td>
+     <td> {{x[7]}} </td>
+     <td> {{x[8]}} </td>
+     <td> {{x[9]}} </td>
+     <td> {{x[10]}} </td>
+     <td> {{x[11]}} </td>
+ </tr> 
+{% endfor %}
+</tbody>
+
+<tfoot>
+{% for x in lista %}
+    {% if x.last %}
+<tr>
+     <td> {{x[1]}} </td>
+     <td> {{x[2]}} </td>
+     <td> {{x[3]}} </td>
+     <td> {{x[4]}} </td>
+     <td> {{x[5]}} </td>
+     <td> {{x[7]}} </td>
+     <td> {{x[8]}} </td>
+     <td> {{x[9]}} </td>
+     <td> {{x[10]}} </td>
+     <td> {{x[11]}} </td>
+</tr>
+    {% endif %}
+{% endfor %}
+</tfoot>
+</table>
+
+
+
+</body>
+</html>

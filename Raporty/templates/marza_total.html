@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+ 
+<head>
+    <title>Marza Total</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='marza.css') }}">
+</head>
+ 
+<body>
+<div>
+<table style="width:100%">
+  <tr>
+    <th>Data</th>
+    <th>Marza</th> 
+  </tr>
+       
+       {% for x in rv %}
+      <tr>
+        <td> <a href="/marza/{{ x[0]}}"> {{ x[0]}}</a> </td>
+        <td>    {{ x[1]}} </td>
+      </tr> 
+        {% endfor %}
+</table>
+      
+</div>
+
+</body>
+ 
+</html>
